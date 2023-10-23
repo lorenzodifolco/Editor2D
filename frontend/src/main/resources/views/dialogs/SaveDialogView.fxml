@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="saveDialogBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancel" text="Cancel"/>
+            <Button fx:id="saveButton"   mnemonicParsing="false" onAction="#save" text="Save"/>
+        </buttons>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+         </BorderPane.margin>
+      </ButtonBar>
+   </bottom>
+   <top>
+       <HBox>
+           <opaqueInsets>
+               <Insets />
+           </opaqueInsets>
+           <Label text="Save an image" BorderPane.alignment="CENTER_LEFT">
+               <font>
+                   <Font size="19.0" />
+               </font>
+            <HBox.margin>
+                <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+            </HBox.margin>
+           </Label>
+       </HBox>
+   </top>
+   <center>
+       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+           <HBox />
+           <ScrollPane VBox.vgrow="ALWAYS" style="-fx-background-color:transparent;">
+               <VBox fx:id="savingOptionsVbox">
+                <VBox.margin>
+                   <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                </VBox.margin>
+               </VBox>
+            <VBox.margin>
+               <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+            </VBox.margin>
+           </ScrollPane>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+       </VBox>
+   </center>
+   <padding>
+      <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+   </padding>
+</BorderPane>

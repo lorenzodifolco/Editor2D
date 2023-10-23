@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="800" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+    <BorderPane VBox.vgrow="ALWAYS">
+        <top>
+            <MenuBar fx:id="menubar" BorderPane.alignment="CENTER">
+                <Menu mnemonicParsing="false" text="File">
+                    <MenuItem mnemonicParsing="false" onAction="#open" text="Open" />
+                    <MenuItem mnemonicParsing="false" onAction="#save" text="Save" />
+                    <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+                </Menu>
+                <Menu fx:id="menuedit" mnemonicParsing="false" text="Edit" visible="false">
+                    <MenuItem mnemonicParsing="false" onAction="#undo" fx:id="undo" text="Undo" />
+                    <MenuItem mnemonicParsing="false" onAction="#redo" fx:id="redo" text="Redo" />
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+                </Menu>
+            </MenuBar>
+        </top>
+        <center>
+            <SplitPane dividerPositions="0.3, 0.7">
+                <AnchorPane SplitPane.resizableWithParent="false">
+                    <ListView fx:id="filtersListView" disable="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                </AnchorPane>
+                <AnchorPane>
+                    <ScrollPane fx:id="scrollpane" fitToHeight="true" fitToWidth="true" prefHeight="393.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+                        <BorderPane>
+                            <center>
+                                <Label fx:id="welcomeLabel" text="First things first, you should load an image" BorderPane.alignment="CENTER" />
+                            </center>
+                        </BorderPane>
+                    </ScrollPane>
+                </AnchorPane>
+                <AnchorPane SplitPane.resizableWithParent="false">
+                    <ListView  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" fx:id="pipelineListView" disable="true" VBox.vgrow="ALWAYS" />
+                </AnchorPane>
+            </SplitPane>
+        </center>
+        <bottom>
+            <HBox prefHeight="40.0">
+                <Label fx:id="bottomBarLabel" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                    </padding>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <ProgressBar fx:id="bottomBarProgressBar" minWidth="150.0" prefWidth="150.0" visible="false">
+                    <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                    </padding>
+                </ProgressBar>
+            </HBox>
+        </bottom>
+    </BorderPane>
+</VBox>
